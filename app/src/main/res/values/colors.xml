@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#217940</color>
+    <color name="colorPrimaryDark">#217940</color>
+    <color name="colorAccent">#217940</color>
+    <color name="colorTextSecondary">#000000</color>
+    <color name="menuOne0">#DFE0DF</color>
+    <color name="menuTwo">#B894F6</color>
+    <color name="menuThree">#C7E8A0</color>
+    <color name="menuThreeDark">#337218</color>
+    <color name="menuFour">#97A4C7</color>
+    <color name="colorBlue">#00337F</color>
+    <color name="colorGrey">#706F6F</color>
+    <color name="colorWhite">#FFF</color>
+    <color name="textOnBoarding">#00B76A</color>
+    <color name="buttonOnBoarding">#217940</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorTransparent">#0FFF</color>
+    <color name="colorPurple">#450E58</color>
+    <color name="colorSamiTransparent">#80217940</color>
+    <color name="no_service">#FF2442</color>
+
+
+</resources>

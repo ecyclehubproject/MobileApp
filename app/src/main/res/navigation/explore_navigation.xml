@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/explore_navigation"
+    app:startDestination="@id/exploreFragment">
+
+    <fragment
+        android:id="@+id/exploreFragment"
+        android:name="com.cyclehub.ui.explore.ExploreFragment"
+        android:label="fragment_explore"
+        tools:layout="@layout/fragment_explore">
+
+        <action
+            android:id="@+id/action_exploreFragment_to_servicesDetailsFragment"
+            app:destination="@id/servicesDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/servicesDetailsFragment"
+        android:name="com.cyclehub.ui.servicedetails.ServicesDetailsFragment"
+        android:label="fragment_services_details"
+        tools:layout="@layout/fragment_services_details">
+        <argument
+            android:name="serviceId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_servicesDetailsFragment_to_checkOutFragment"
+            app:destination="@id/checkOutFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addressFragment"
+        android:name="com.cyclehub.ui.address.AddressFragment"
+        android:label="address_fragment"
+        tools:layout="@layout/address_fragment">
+        <argument
+            android:name="purchasedata"
+            app:argType="com.cyclehub.model.PurchaseData" />
+        <action
+            android:id="@+id/action_addressFragment_to_checkOutFragment"
+            app:destination="@id/checkOutFragment"
+            app:popUpTo="@id/checkOutFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="locationData"
+            app:argType="com.cyclehub.model.LocationData" />
+    </fragment>
+    <fragment
+        android:id="@+id/checkOutFragment"
+        android:name="com.cyclehub.ui.checkout.CheckOutFragment"
+        android:label="check_out_fragment"
+        tools:layout="@layout/check_out_fragment">
+        <argument
+            android:name="purchasedata"
+            app:argType="com.cyclehub.model.PurchaseData" />
+        <action
+            android:id="@+id/action_checkOutFragment_to_orderStatusFragment1"
+            app:destination="@id/orderStatusFragmentOffline" />
+        <action
+            android:id="@+id/action_checkOutFragment_to_addressFragment"
+            app:destination="@id/addressFragment" />
+        <action
+            android:id="@+id/action_checkOutFragment_to_paymentFragment"
+            app:destination="@id/paymentFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/paymentFragment"
+        android:name="com.cyclehub.ui.payment.PaymentFragment"
+        android:label="PaymentFragment">
+        <argument
+            android:name="purchasedata"
+            app:argType="com.cyclehub.model.PurchaseData" />
+        <argument
+            android:name="orderdata"
+            app:argType="com.cyclehub.model.OrderDetails" />
+        <argument
+            android:name="orderExtraInfo"
+            app:argType="com.cyclehub.model.OrderExtraInfo" />
+        <action
+            android:id="@+id/action_paymentFragment_to_orderStatusFragment"
+            app:destination="@id/orderStatusFragmentOnline" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderStatusFragmentOnline"
+        android:name="com.cyclehub.ui.orderstatus.OrderStatusFragment"
+        android:label="order_status_fragment"
+        tools:layout="@layout/order_status_fragment">
+        <argument
+            android:name="paymentstatus"
+            app:argType="boolean" />
+        <action
+            android:id="@+id/action_orderStatusFragmentOnline_to_myOrderDetailsFragment2"
+            app:destination="@id/myOrderDetailsFragment2"
+            app:popUpTo="@id/exploreFragment" />
+        <argument
+            android:name="orderid"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderStatusFragmentOffline"
+        android:name="com.cyclehub.ui.orderstatus.OrderStatusOfflineFragment"
+        android:label="order_status_fragment">
+        <argument
+            android:name="paymentstatus"
+            app:argType="boolean" />
+        <action
+            android:id="@+id/action_orderStatusFragmentOffline_to_myOrderDetailsFragment2"
+            app:destination="@id/myOrderDetailsFragment2"
+            app:popUpTo="@id/exploreFragment" />
+        <argument
+            android:name="orderid"
+            app:argType="string" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/myOrderDetailsFragment2"
+        android:name="com.cyclehub.ui.orderdetails.MyOrderDetailsFragment"
+        android:label="my_order_details_fragment"
+        tools:layout="@layout/my_order_details_fragment">
+        <action
+            android:id="@+id/action_myOrderDetailsFragment2_to_exploreFragment"
+            app:destination="@id/exploreFragment"
+            app:popUpTo="@id/exploreFragment" />
+        <argument
+            android:name="orderid"
+            app:argType="string" />
+        <argument
+            android:name="from"
+            app:argType="string" />
+    </fragment>
+
+
+</navigation>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/onboadring_navigation"
+    app:startDestination="@id/onboardingFragment">
+    <fragment
+        android:id="@+id/onboardingFragment"
+        android:name="com.cyclehub.ui.onboarding.OnBoardingFragment"
+        android:label="fragment_onboarding"
+        tools:layout="@layout/fragment_onboarding">
+
+        <action
+            android:id="@+id/action_onboardingFragment_to_explore_navigation"
+            app:destination="@id/explore_navigation"
+            app:popUpTo="@id/explore_navigation"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_onboardingFragment_to_vendorLoginFragment"
+            app:destination="@id/vendorLoginFragment" />
+        <action
+            android:id="@+id/action_onboardingFragment_to_engineer_navigation"
+            app:destination="@id/engineer_navigation"
+            app:popUpTo="@id/engineer_navigation"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_onboardingFragment_to_vendor_navigation"
+            app:destination="@id/vendor_navigation"
+            app:popUpTo="@id/vendor_navigation"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_onboardingFragment_to_signupFragment"
+            app:destination="@id/signupFragment" />
+        <action
+            android:id="@+id/action_onboardingFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.cyclehub.ui.login.LoginFragment"
+        android:label="LoginFragment">
+        <action
+            android:id="@+id/action_loginFragment_to_otpValidationFragment"
+            app:destination="@id/otpValidationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signupFragment"
+        android:name="com.cyclehub.ui.signup.SignupFragment"
+        android:label="SignupFragment">
+        <action
+            android:id="@+id/action_signupFragment_to_otpValidationFragment"
+            app:destination="@id/otpValidationFragment" />
+    </fragment>
+
+    <include app:graph="@navigation/explore_navigation" />
+    <include app:graph="@navigation/vendor_navigation" />
+    <include app:graph="@navigation/engineer_navigation" />
+    <fragment
+        android:id="@+id/vendorLoginFragment"
+        android:name="com.cyclehub.ui.vendorlogin.VendorLoginFragment"
+        android:label="vendor_login_fragment"
+        tools:layout="@layout/vendor_login_fragment">
+        <action
+            android:id="@+id/action_vendorLoginFragment_to_otpValidationFragment"
+            app:destination="@id/otpValidationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/otpValidationFragment"
+        android:name="com.cyclehub.ui.otp.OtpValidationFragment"
+        android:label="otp_validation_fragment"
+        tools:layout="@layout/otp_validation_fragment">
+
+        <action
+            android:id="@+id/action_otpValidationFragment_to_explore_navigation"
+            app:destination="@id/explore_navigation"
+            app:popUpTo="@id/explore_navigation" />
+        <action
+            android:id="@+id/action_otpValidationFragment_to_vendor_navigation"
+            app:destination="@id/vendor_navigation"
+            app:popUpTo="@id/vendor_navigation" />
+        <action
+            android:id="@+id/action_otpValidationFragment_to_engineer_navigation"
+            app:destination="@id/engineer_navigation"
+            app:popUpTo="@id/engineer_navigation" />
+        <argument
+            android:name="mobile"
+            app:argType="string" />
+    </fragment>
+</navigation>

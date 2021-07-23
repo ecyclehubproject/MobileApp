@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.AppCompatTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/description"
+    style="@style/Body1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:drawableStart="@drawable/ic_right"
+    android:drawablePadding="8dp"
+    android:gravity="center_vertical"
+    android:maxLines="2"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp" />

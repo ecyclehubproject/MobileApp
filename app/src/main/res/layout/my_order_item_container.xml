@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/order_details_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="16dp"
+    android:background="@drawable/border_background_my_order"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/order_details_title">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/service_image"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="@+id/amount_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/order_id" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/name_user"
+        style="@style/Caption1Purple"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        app:layout_constraintEnd_toStartOf="@+id/order_on"
+        app:layout_constraintStart_toEndOf="@+id/service_image"
+        app:layout_constraintTop_toBottomOf="@id/order_id"
+        tools:text="TextView" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/service_name"
+        style="@style/Body2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="2dp"
+        app:layout_constraintStart_toEndOf="@+id/service_image"
+        app:layout_constraintTop_toBottomOf="@+id/name_user"
+        tools:text="TextView" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/delivered_to_title"
+        style="@style/Body2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="2dp"
+        app:layout_constraintStart_toEndOf="@+id/service_image"
+        app:layout_constraintTop_toBottomOf="@+id/service_name"
+        android:text="@string/delivered_to" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/user_address"
+        style="@style/Body2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="8dp"
+        android:ellipsize="end"
+        android:textSize="12sp"
+        android:maxLines="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/service_image"
+        app:layout_constraintTop_toBottomOf="@+id/delivered_to_title" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/amount_title"
+        style="@style/Caption1Purple"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:maxLines="2"
+        app:layout_constraintEnd_toStartOf="@+id/amount"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/delivered_to_title"
+        app:layout_constraintTop_toBottomOf="@+id/user_address"
+        android:text="@string/total" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/amount"
+        style="@style/Caption1Purple"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="2"
+        app:layout_constraintBottom_toBottomOf="@+id/amount_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/amount_title"
+        tools:text="@string/amount" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/order_on"
+        style="@style/Body2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="2"
+        app:layout_constraintBottom_toBottomOf="@+id/name_user"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/name_user"
+        tools:text="1 day ago" />
+
+    <TextView
+        android:id="@+id/order_id"
+        style="@style/Caption1Purple"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="8dp"
+        android:autoSizeMaxTextSize="14sp"
+        android:autoSizeMinTextSize="11sp"
+        android:autoSizeTextType="uniform"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/order_status"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/service_image"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:targetApi="o" />
+
+    <TextView
+        android:id="@+id/order_status"
+        style="@style/Caption1Purple"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/text_view_background_transprent"
+        android:maxLines="1"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/order_id"
+        app:layout_constraintEnd_toEndOf="@+id/amount"
+        app:layout_constraintTop_toTopOf="@+id/order_id" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--    xmlns:tools="http://schemas.android.com/tools"-->
+    <!--    android:layout_width="match_parent"-->
+    <!--    android:layout_height="wrap_content"-->
+    <!--    android:layout_marginStart="8dp"-->
+    <!--    android:layout_marginTop="8dp"-->
+    <!--    android:layout_marginEnd="8dp"-->
+    <!--    android:background="@drawable/border_background_my_order">-->
+
+    <!--    <androidx.appcompat.widget.AppCompatImageView-->
+    <!--        android:id="@+id/imageSlideIcon"-->
+    <!--        android:layout_width="90dp"-->
+    <!--        android:layout_height="90dp"-->
+    <!--        android:layout_marginStart="8dp"-->
+    <!--        android:padding="10dp"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+    <!--    <androidx.appcompat.widget.AppCompatTextView-->
+    <!--        android:id="@+id/order_id"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="16dp"-->
+    <!--        android:layout_marginBottom="75dp"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@+id/imageSlideIcon"-->
+    <!--        app:layout_constraintStart_toEndOf="@+id/imageSlideIcon"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/imageSlideIcon"-->
+    <!--        tools:text="snm" />-->
+
+    <!--    <androidx.appcompat.widget.AppCompatTextView-->
+    <!--        android:id="@+id/order_service_name"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="16dp"-->
+    <!--        android:layout_marginTop="8dp"-->
+    <!--        app:layout_constraintStart_toEndOf="@+id/imageSlideIcon"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/order_id"-->
+    <!--        tools:text="snm" />-->
+
+    <!--</androidx.constraintlayout.widget.ConstraintLayout>-->

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="OtpView">
+        <attr name="itemCount" format="integer" />
+        <attr name="lineEndColor" format="integer" />
+        <attr name="lineStartColor" format="integer" />
+        <attr name="dashColor" format="integer" />
+        <attr name="lineCount" format="integer" />
+        <attr name="dashLength" format="float" />
+        <attr name="spaceLength" format="float" />
+        <attr name="showDash" format="boolean" />
+    </declare-styleable>
+</resources>

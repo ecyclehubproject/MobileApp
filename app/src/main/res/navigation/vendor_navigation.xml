@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/vendor_navigation"
+    app:startDestination="@id/vendorDashboardFragment">
+
+    <fragment
+        android:id="@+id/vendorDashboardFragment"
+        android:name="com.cyclehub.ui.vendordashboard.VendorDashboardFragment"
+        android:label="VendorDashboardFragment">
+        <action
+            android:id="@+id/action_vendorDashboardFragment_to_myOrderDetailsFragment"
+            app:destination="@id/myOrderDetailsFragment" />
+        <action
+            android:id="@+id/action_vendorDashboardFragment_to_addEngineerFragment"
+            app:destination="@id/addEngineerFragment" />
+        <action
+            android:id="@+id/action_vendorDashboardFragment_to_vendorEngineerDetailsFragment"
+            app:destination="@id/vendorEngineerDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myOrderDetailsFragment"
+        android:name="com.cyclehub.ui.orderdetails.MyOrderDetailsFragment"
+        android:label="my_order_details_fragment"
+        tools:layout="@layout/my_order_details_fragment">
+        <argument
+            android:name="orderid"
+            app:argType="string" />
+        <argument
+            android:name="from"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_myOrderDetailsFragment_to_invoiceFragment"
+            app:destination="@id/invoiceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/invoiceFragment"
+        android:name="com.cyclehub.ui.invoice.InvoiceFragment"
+        android:label="fragment_invoice"
+        tools:layout="@layout/fragment_invoice">
+        <argument
+            android:name="order_id"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/addEngineerFragment"
+        android:name="com.cyclehub.ui.addengineer.AddEngineerFragment"
+        android:label="AddEngineerFragment" />
+    <fragment
+        android:id="@+id/vendorEngineerDetailsFragment"
+        android:name="com.cyclehub.ui.vendorengineerdetails.VendorEngineerDetailsFragment"
+        android:label="VendorEngineerDetailsFragment">
+        <argument
+            android:name="engineerData"
+            app:argType="com.cyclehub.model.EngineerData" />
+    </fragment>
+</navigation>

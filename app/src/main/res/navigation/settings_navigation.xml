@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/settings_navigation"
+    app:startDestination="@id/settings_fragment">
+
+    <fragment
+        android:id="@+id/settings_fragment"
+        android:name="com.cyclehub.ui.settings.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings">
+        <action
+            android:id="@+id/action_settings_fragment_to_myOrdersFragment"
+            app:destination="@id/myOrdersFragment" />
+        <action
+            android:id="@+id/action_settings_fragment_to_myTransactionsFragment"
+            app:destination="@id/myTransactionsFragment" />
+        <action
+            android:id="@+id/action_settings_fragment_to_customerEditProfileFragment"
+            app:destination="@id/customerEditProfileFragment" />
+
+        <action
+            android:id="@+id/action_settings_fragment_to_myBikeFragment"
+            app:destination="@id/myBikeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myOrdersFragment"
+        android:name="com.cyclehub.ui.myorder.MyOrdersFragment"
+        android:label="my_orders_fragment"
+        tools:layout="@layout/my_orders_fragment">
+        <action
+            android:id="@+id/action_myOrdersFragment_to_myOrderDetailsFragment"
+            app:destination="@id/myOrderDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myOrderDetailsFragment"
+        android:name="com.cyclehub.ui.orderdetails.MyOrderDetailsFragment"
+        android:label="my_order_details_fragment"
+        tools:layout="@layout/my_order_details_fragment">
+        <argument
+            android:name="orderid"
+            app:argType="string" />
+        <argument
+            android:name="from"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_myOrderDetailsFragment_to_invoiceFragment"
+            app:destination="@id/invoiceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myTransactionsFragment"
+        android:name="com.cyclehub.ui.mytransactions.MyTransactionsFragment"
+        android:label="MyTransactionsFragment" />
+    <fragment
+        android:id="@+id/customerEditProfileFragment"
+        android:name="com.cyclehub.ui.editprofile.CustomerEditProfileFragment"
+        android:label="customer_edit_profile_fragment"
+        tools:layout="@layout/customer_edit_profile_fragment">
+        <argument
+            android:name="userInfo"
+            android:defaultValue="@null"
+            app:argType="com.cyclehub.model.UserData"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/myBikeFragment"
+        android:name="com.cyclehub.ui.mybike.MyBikeFragment"
+        android:label="my_bike_fragment"
+        tools:layout="@layout/my_bike_fragment" />
+    <fragment
+        android:id="@+id/invoiceFragment"
+        android:name="com.cyclehub.ui.invoice.InvoiceFragment"
+        android:label="fragment_invoice"
+        tools:layout="@layout/fragment_invoice" >
+        <argument android:name="order_id"
+            app:argType="string" />
+    </fragment>
+</navigation>

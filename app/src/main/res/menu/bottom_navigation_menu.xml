@@ -1,0 +1,21 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/explore"
+        android:enabled="true"
+        android:icon="@drawable/ic_homeicon"
+        android:menuCategory="secondary"
+        android:title="@string/explore" />
+    <item
+        android:id="@+id/settings"
+        android:enabled="true"
+        android:icon="@drawable/ic_accounticon"
+        android:menuCategory="secondary"
+        android:title="@string/settings" />
+    <item
+        android:id="@+id/support"
+        android:enabled="true"
+        android:icon="@drawable/ic_helpicon"
+        android:menuCategory="secondary"
+        android:title="@string/support" />
+
+</menu>

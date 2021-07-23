@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/vendor_home_background"
+    android:focusable="false"
+    android:focusableInTouchMode="true">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/title"
+        style="@style/Headline1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:text="Please provide the reason for cancellation*"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Please provide the reason for cancellation*" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/sub_title"
+        style="@style/InputEditText"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/edit_text_border"
+        android:backgroundTint="@color/textOnBoarding"
+        android:gravity="top|start"
+        android:hint="@string/enter_region_here"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/dismiss"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:background="@color/buttonOnBoarding"
+        android:minWidth="130dp"
+        android:text="Dismiss"
+        app:layout_constraintBottom_toBottomOf="@+id/cancel_order"
+        app:layout_constraintEnd_toEndOf="@+id/sub_title"
+        app:layout_constraintTop_toTopOf="@+id/cancel_order" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/cancel_order"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/buttonOnBoarding"
+        android:minWidth="130dp"
+        android:text="Cancel Order"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ok_button"
+        app:layout_constraintStart_toStartOf="@+id/sub_title"
+        app:layout_constraintTop_toBottomOf="@+id/sub_title" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

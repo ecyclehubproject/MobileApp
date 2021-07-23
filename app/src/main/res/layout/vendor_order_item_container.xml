@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/order_details_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="8dp"
+    android:background="@drawable/border_background_my_order"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/order_details_title">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/order_id"
+        style="@style/TextBlack12SP"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        app:layout_constraintBottom_toBottomOf="@+id/order_status"
+        app:layout_constraintEnd_toStartOf="@+id/order_status"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="TextView" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/service_name"
+        style="@style/Body2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@+id/order_id"
+        app:layout_constraintTop_toBottomOf="@+id/order_id"
+        tools:text="TextView" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/user_address"
+        style="@style/TextBlack12SP"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/order_id"
+        app:layout_constraintTop_toBottomOf="@+id/service_name" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/assign_to"
+        style="@style/TextBlack12SP"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:maxLines="2"
+        app:layout_constraintEnd_toStartOf="@+id/assign_at"
+        app:layout_constraintStart_toStartOf="@+id/user_address"
+        app:layout_constraintTop_toBottomOf="@+id/user_address"
+        tools:text="@string/total" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/assign_at"
+        style="@style/TextBlack12SP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="2"
+        android:textColor="@color/colorGrey"
+        app:layout_constraintBottom_toBottomOf="@+id/assign_to"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/assign_to"
+        tools:text="@string/amount" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/order_status"
+        style="@style/TextBlack12SP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/text_view_background_transprent"
+        android:maxLines="2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="1 day ago" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

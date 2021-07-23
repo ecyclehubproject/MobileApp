@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    custom:context=".ui.otp.OtpValidationFragment">
+
+    <com.cyclehub.ui.otp.OtpView
+        android:id="@+id/otp_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/edit_text_border"
+        android:digits="1234567890"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:inputType="textPassword|number"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lineCount="6"
+        app:lineEndColor="@color/textOnBoarding"
+        app:lineStartColor="@color/textOnBoarding"
+        app:showDash="false" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/confirm_button"
+        style="@style/Button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@color/buttonOnBoarding"
+        android:minWidth="200dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:text="@string/confirm"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintEnd_toEndOf="@+id/otp_view"
+        app:layout_constraintStart_toStartOf="@+id/otp_view"
+        app:layout_constraintTop_toBottomOf="@+id/resend_otp" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/app_logo"
+        android:layout_width="0dp"
+        android:layout_height="125dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/logo_ecyclehub"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        style="@style/Headline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/spantaran"
+        android:text="@string/verification"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_logo" />
+
+    <TextView
+        android:id="@+id/textView3"
+        style="@style/Body2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:text="@string/a_6_digit_pin"
+        android:textColor="@color/colorGrey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/resend_otp"
+        style="@style/Caption1Purple"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:text="Resend OTP"
+        android:textColor="@color/buttonOnBoarding"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/otp_view" />
+
+    <TextView
+        android:id="@+id/timer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/resend_otp"
+        app:layout_constraintEnd_toStartOf="@+id/resend_otp"
+        app:layout_constraintStart_toStartOf="@+id/otp_view"
+        app:layout_constraintTop_toTopOf="@+id/resend_otp" />
+
+    <include
+        android:id="@+id/progress"
+        layout="@layout/progerss"
+        custom:layout_editor_absoluteX="16dp"
+        custom:layout_editor_absoluteY="16dp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/update_mobile"
+        style="@style/Caption2Purple"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:clickable="true"
+        android:focusable="false"
+        android:gravity="center_horizontal"
+        android:text="Update Mobile Number"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/confirm_button"
+        app:layout_constraintStart_toStartOf="@+id/confirm_button"
+        app:layout_constraintTop_toBottomOf="@+id/confirm_button" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
